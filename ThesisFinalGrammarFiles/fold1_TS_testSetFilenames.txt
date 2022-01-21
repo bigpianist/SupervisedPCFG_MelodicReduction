@@ -1,0 +1,58 @@
+./MusicXml/MSC-298.xml
+./MusicXml/MSC-297.xml
+./MusicXml/54_Suite HWV 430 Air mit Variationen Harmonious Blacksmith.xml
+./MusicXml/MSC-110.xml
+./MusicXml/MSC-300.xml
+./MusicXml/MSC-138.xml
+./MusicXml/MSC-147.xml
+./MusicXml/64_Stimmen aus der Kinderwelt, 12 leichte Vortragsstuck Op.78-3 Heideroslein.xml
+./MusicXml/34_Water Music in D major HWV 349 No.11 Alla Hornpipe.xml
+./MusicXml/MSC-249.xml
+./MusicXml/MSC-250.xml
+./MusicXml/45_Gianni Schicchi O mio babbino caro.xml
+./MusicXml/MSC-178.xml
+./MusicXml/35_Ombra mai fu HWV 40.xml
+./MusicXml/MSC-212.xml
+./MusicXml/80_Symphonie Nr.40 g moll KV.550 1.Satz.xml
+./MusicXml/10_Wiegenlied.xml
+./MusicXml/MSC-152.xml
+./MusicXml/MSC-221.xml
+./MusicXml/MSC-214.xml
+./MusicXml/61_Album fur die Jugend Op.68-10 Frohlicher Landmann.xml
+./MusicXml/22_Ellens Gesang III Op.52-6 D.839.xml
+./MusicXml/23_Die Meistersinger von Nurnberg Prelude.xml
+./MusicXml/MSC-195.xml
+./MusicXml/MSC-171.xml
+./MusicXml/MSC-288.xml
+./MusicXml/MSC-144.xml
+./MusicXml/MSC-262.xml
+./MusicXml/MSC-124.xml
+./MusicXml/19_Tannhauser Overture.xml
+./MusicXml/MSC-160.xml
+./MusicXml/04_The Preludes Op.28 No.15.xml
+./MusicXml/39_Andante C dur.xml
+./MusicXml/56_Le Coucou.xml
+./MusicXml/MSC-278.xml
+./MusicXml/16_William Tell Overture.xml
+./MusicXml/MSC-103.xml
+./MusicXml/MSC-211.xml
+./MusicXml/MSC-151.xml
+./MusicXml/MSC-136.xml
+./MusicXml/81_Symphony No.9 in E minor Op.95 B.178 From the New World Mov.2 Goin' Home.xml
+./MusicXml/24_Orphee aux Enfers Overture.xml
+./MusicXml/MSC-175.xml
+./MusicXml/MSC-162.xml
+./MusicXml/MSC-186.xml
+./MusicXml/71_Messiah HWV.56 23.Hallelujah.xml
+./MusicXml/MSC-196.xml
+./MusicXml/MSC-194.xml
+./MusicXml/MSC-238.xml
+./MusicXml/MSC-270.xml
+./MusicXml/MSC-202.xml
+./MusicXml/MSC-291.xml
+./MusicXml/53_Lieder ohne Worte Op.19-3 Jagerlied.xml
+./MusicXml/MSC-264.xml
+./MusicXml/MSC-140.xml
+./MusicXml/MSC-222.xml
+./MusicXml/MSC-125.xml
+./MusicXml/MSC-158.xml

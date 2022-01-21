@@ -1,0 +1,19 @@
+./MusicXml/04_The Preludes Op.28 No.15.xml
+./MusicXml/34_Water Music in D major HWV 349 No.11 Alla Hornpipe.xml
+./MusicXml/65_25 Etudes faciles et progressives, conposees et doigtees expressement pour l'etendue des petites mains Op.100-20 Tarentelle.xml
+./MusicXml/80_Symphonie Nr.40 g moll KV.550 1.Satz.xml
+./MusicXml/94_Csikos Post.xml
+./MusicXml/52_Fantasiestucke Op.12-7 Traumes Wirren.xml
+./MusicXml/95_12 Variationen uber ein franzosisches Lied 'Ah,vous dirai-je, maman' C dur K.265 K6.300e.xml
+./MusicXml/55_Farewell To The Piano WoO.62.xml
+./MusicXml/53_Lieder ohne Worte Op.19-3 Jagerlied.xml
+./MusicXml/97_Les Patineurs Op.183.xml
+./MusicXml/74_8 Humoresky Op.101-7 B.187 Ges dur.xml
+./MusicXml/57_Waves of the Danube.xml
+./MusicXml/17_Carmen.xml
+./MusicXml/46_Dichterliebe Op.48-1 Im wunderschonen Monat.xml
+./MusicXml/12_Anitras Dans.xml
+./MusicXml/05_Turkish March.xml
+./MusicXml/18_Thais Meditation.xml
+./MusicXml/66_The Nutcracker Suite Op.71a No.2 March.xml
+./MusicXml/27_Peer Gynt Suite No.1 Op.46 Morgenstemning.xml

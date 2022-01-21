@@ -1,0 +1,19 @@
+./MusicXml/72_Preludes 1 La fille aux cheveux de lin.xml
+./MusicXml/73_Pavane pour une infante defunte.xml
+./MusicXml/64_Stimmen aus der Kinderwelt, 12 leichte Vortragsstuck Op.78-3 Heideroslein.xml
+./MusicXml/51_Fantasiestucke Op.12-2 Aufschwung.xml
+./MusicXml/82_An der schonen blauen Donau Op.314.xml
+./MusicXml/19_Tannhauser Overture.xml
+./MusicXml/31_Sinfonie Nr.9 d moll Op.125 4.Satz An die Freude.xml
+./MusicXml/83_Radetzky-Marsch Op.228.xml
+./MusicXml/20_La Traviata Brindisi.xml
+./MusicXml/67_Ballade g moll Op.23.xml
+./MusicXml/50_Amazing Grace.xml
+./MusicXml/96_Lieder ohne Worte Heft 5 Op.62-6 Fruhlingslied.xml
+./MusicXml/03_Bagatelle 'Fur Elise' WoO.59.xml
+./MusicXml/86_Pomp and Circumstance Op.39 No.1.xml
+./MusicXml/100_Sonate fur Klavier Nr.11 A dur K.331 K6.300i Mov.1.xml
+./MusicXml/21_Plaisir d'Amour.xml
+./MusicXml/77_Violinkonzert e moll Op.64 1.Satz.xml
+./MusicXml/06_Blumenlied Op.39.xml
+./MusicXml/38_Sonate fur Klavier Nr.15 C dur K.545 Mov.1.xml

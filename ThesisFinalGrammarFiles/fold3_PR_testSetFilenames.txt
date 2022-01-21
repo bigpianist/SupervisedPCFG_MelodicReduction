@@ -1,0 +1,19 @@
+./MusicXml/35_Ombra mai fu HWV 40.xml
+./MusicXml/88_Scherzo b moll Op.31.xml
+./MusicXml/56_Le Coucou.xml
+./MusicXml/84_Toccata und Fuge d moll BWV565.xml
+./MusicXml/39_Andante C dur.xml
+./MusicXml/54_Suite HWV 430 Air mit Variationen Harmonious Blacksmith.xml
+./MusicXml/68_12 Etudes E dur Op.10-3.xml
+./MusicXml/58_Waltzes No.6 Op.64-1 Des dur Valse du Petit Chien.xml
+./MusicXml/85_Tableaux d'une exposition Promenade.xml
+./MusicXml/44_Rosamunde Prinzessin von Zypern Op.26 D797 Intermezzo No.3.xml
+./MusicXml/69_Kanon und Gigue D dur for drei Violinen und Basso Continuo Kanon.xml
+./MusicXml/89_12 Etudes c moll Op.10-12.xml
+./MusicXml/59_Schwanengesang No.1 Op.72-4 D.957-4 Standchen.xml
+./MusicXml/90_Impromptus D 935 Op.142-3 B dur.xml
+./MusicXml/32_The Nutcracker Suite Op.71a No.8 Waltz of the Flowers.xml
+./MusicXml/43_Les Contes d'Hoffmann Barcarolle.xml
+./MusicXml/91_Rondo D dur K.485.xml
+./MusicXml/07_Nocturne.xml
+./MusicXml/36_Estudiantina Op.191.xml

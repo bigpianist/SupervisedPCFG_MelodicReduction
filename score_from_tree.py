@@ -6,6 +6,24 @@ import music21
 import nltk
 import copy
 
+def get_pitch_list_from_solution_tree(head_xml, tag_name, pitch_list):
+	primary_xml = None
+	try:
+		head_note = head_xml.find('head/chord/note')
+	except:
+		print("failed!!!")
+	#print(head_note)
+	head_pitch_ref = head_note.attrib['id']
+	primary_xml = head_xml.find('primary')
+	if primary_xml != None:
+		pitch_list = get_pitch_list_from_solution_tree(primary_xml.find(tag_name), tag_name, pitch_list)
+		secondary_xml = head_xml.find('secondary')
+		pitch_list = get_pitch_list_from_solution_tree(secondary_xml.find(tag_name), tag_name, pitch_list)
+	else:
+		if head_pitch_ref not in pitch_list:
+			pitch_list.append(head_pitch_ref)
+	return pitch_list
+
 def get_total_depth_of_tree(head_xml, depth, tag_name):
 
 	primary_xml = None
@@ -14,7 +32,7 @@ def get_total_depth_of_tree(head_xml, depth, tag_name):
 		head_note = head_xml.find('head/chord/note')
 	except:
 		print("failed!!!")
-	print(head_note)
+	#print(head_note)
 	head_pitch_ref = head_note.attrib['id']
 	primary_xml = head_xml.find('primary')
 	depth += 1
@@ -65,7 +83,7 @@ def remove_embellishment_rules_from_tree_below_depth(tree_root, removed_leaves, 
 	return tree_root, removed_leaves, leaf_index
 
 
-def remove_embellishment_rules_from_tree_negative_depth(tree_root, removed_leaves, desired_depth, depth, leaf_index):
+def remove_embellishment_rules_from_tree_negative_depth(tree_root, removed_leaves, desired_depth, depth, leaf_index, num_removed_leaves, stop_labels=[]):
 	parent_label = tree_root._label
 	max_subtree_depth = 0
 	for index, subtree in enumerate(tree_root):
@@ -73,32 +91,46 @@ def remove_embellishment_rules_from_tree_negative_depth(tree_root, removed_leave
 		tree_depth = 1
 		if type(tree_root) == nltk.tree.Tree or type(tree_root) == nltk.tree.ProbabilisticTree:
 			tree_depth = tree_root.height()
-		if (parent_label == 'N' or parent_label == 'S') and (type(subtree) == nltk.tree.Tree or type(subtree) == nltk.tree.ProbabilisticTree):
-			tree_root[index], removed_leaves, leaf_index, max_subtree_depth = remove_embellishment_rules_from_tree_negative_depth(subtree, removed_leaves, desired_depth, depth, leaf_index)
-		elif parent_label != 'N':
+		if parent_label in stop_labels and (type(subtree) == nltk.tree.Tree or type(subtree) == nltk.tree.ProbabilisticTree):
+			tree_root[index], removed_leaves, leaf_index, max_subtree_depth, num_removed_leaves = remove_embellishment_rules_from_tree_negative_depth(subtree, removed_leaves, desired_depth, depth, leaf_index, num_removed_leaves)
+		elif (len(stop_labels) == 2 and parent_label in stop_labels and parent_label != 'S') or len(stop_labels) != 2:
 			#KILL THE CHILDREN!!!!!
 			if tree_depth <= desired_depth and max_subtree_depth + 1 <= desired_depth and len(tree_root) > 1:
 				num_leaves = len(tree_root.leaves())
 				max_subtree_depth = tree_depth
 				#you're leaving one leaf remaining.
 				child_leaves = 0
+
 				for i in range(num_leaves):
-					if (i + leaf_index) in removed_leaves:
-						child_leaves += removed_leaves[i + leaf_index]
-						removed_leaves[i + leaf_index] = 0
-				removed_leaves[leaf_index] = num_leaves - 1 + child_leaves
+					if (i + leaf_index + num_removed_leaves) in removed_leaves:
+						child_leaves += 1#removed_leaves[i + leaf_index + num_removed_leaves]
+				#		del removed_leaves[i + leaf_index + num_removed_leaves]
+				#It's possible that the left-hand side index has already been added
+				#You're collapsing two leaves into one, so if the left is already collapsed
+				#then you have to add the right child leaf.
+				if (leaf_index + num_removed_leaves) in removed_leaves:
+					removed_leaves.append(leaf_index + num_removed_leaves + child_leaves)
+				else:
+					removed_leaves.append(leaf_index + num_removed_leaves)
+				#removed_leaves[leaf_index + num_removed_leaves] = num_leaves - 1 + child_leaves
+				num_removed_leaves += num_leaves - 1 + child_leaves
 				leaf_index += 1
 				del tree_root[:]
 				tree_root.append(parent_label)
 			elif (type(subtree) == nltk.tree.Tree or type(subtree) == nltk.tree.ProbabilisticTree):
-				tree_root[index], removed_leaves, leaf_index, max_subtree_depth = remove_embellishment_rules_from_tree_negative_depth(subtree, removed_leaves, desired_depth, depth, leaf_index)
+				tree_root[index], removed_leaves, leaf_index, max_subtree_depth, num_removed_leaves = remove_embellishment_rules_from_tree_negative_depth(subtree, removed_leaves, desired_depth, depth, leaf_index, num_removed_leaves)
 			else:
+				if (leaf_index + num_removed_leaves) in removed_leaves:
+					num_removed_leaves += 1
 				leaf_index += 1
-	return tree_root, removed_leaves, leaf_index, max_subtree_depth
+		#elif isinstance(subtree, str):
+		#		leaf_index += 1
+	return tree_root, removed_leaves, leaf_index, max_subtree_depth, num_removed_leaves
 
 
 def get_melody_from_parse_tree(parse_tree, removed_leaves, music_xml):
 	melody_stream = music21.stream.Stream()
+	#HAX this should be measure 1, but with an anacrusis, the time signature is in measure 2
 	time_sig = music_xml.parts[0].measure(1).getContextByClass('TimeSignature')
 	key_sig = music_xml.parts[0].measure(1).getContextByClass('KeySignature')
 	melody_stream.append(time_sig)
@@ -109,6 +141,8 @@ def get_melody_from_parse_tree(parse_tree, removed_leaves, music_xml):
 	leaf_index = 0
 	num_ties = 0
 	num_skipped_notes = 0
+	#insert the first note of the song
+	#HAX
 	melody_stream.insert(notes[note_index].offset, notes[note_index])
 	if notes[note_index].tie != None:
 		next_note = notes[note_index + 1]
@@ -117,30 +151,44 @@ def get_melody_from_parse_tree(parse_tree, removed_leaves, music_xml):
 			note_index += 1
 	note_index += 1
 	cur_skips = 0
+	skippedANote = False
 	for leaf in tree_leaves:
 		if leaf_index in removed_leaves:
-			num_skipped_notes += removed_leaves[leaf_index]
-			cur_skips = removed_leaves[leaf_index]
-		if (note_index + num_skipped_notes) >= len(notes):
+			#print('skipping note index of: ' + str(note_index))
+			skippedANote = True
+			note_index += 1
+			leaf_index += 1
+			continue
+		if note_index >= len(notes):
 			print("this bad")
-		melody_stream.insert(notes[note_index + num_skipped_notes].offset, notes[note_index + num_skipped_notes])
-		if cur_skips > 0:
+		melody_stream.insert(notes[note_index].offset, notes[note_index])
+		if skippedANote:
 			cur_note = melody_stream[-1]
 			prev_note = melody_stream[-2]
 			new_dur_value = cur_note.offset - prev_note.offset
 			new_dur = music21.duration.Duration(new_dur_value)
 			prev_note.duration = new_dur
-			cur_skips -= 1
+			skippedANote = False
 
-		if notes[note_index + num_skipped_notes].tie != None:
-			next_note = notes[note_index + num_skipped_notes + 1]
+		if notes[note_index].tie != None:
+			next_note = notes[note_index + 1]
 			if next_note.tie and next_note.tie.type == 'stop':
 				melody_stream.insert(next_note.offset, next_note)
 				note_index += 1
 
 		note_index += 1
 		leaf_index += 1
+	if note_index < len(notes):
+		melody_stream.insert(notes[note_index].offset, notes[note_index])
+		if skippedANote:
+			cur_note = melody_stream[-1]
+			prev_note = melody_stream[-2]
+			new_dur_value = cur_note.offset - prev_note.offset
+			new_dur = music21.duration.Duration(new_dur_value)
+			prev_note.duration = new_dur
+			skippedANote = False
 	melody_stream.show()
+	return melody_stream
 
 
 #this modifies the input tree
@@ -179,7 +227,7 @@ def gather_note_refs_of_depth(head_xml, note_refs, tag_name, desired_depth, dept
 		head_note = head_xml.find('head/chord/note')
 	except:
 		print("failed!!!")
-	print(head_note)
+	#print(head_note)
 	head_pitch_ref = head_note.attrib['id']
 	if head_pitch_ref not in note_refs:
 		note_refs.append(head_pitch_ref)
@@ -204,12 +252,12 @@ def pitch_refs_to_notes(ordered_pitch_ref_list, music_xml):
 	prev_offset = 0
 	for p in ordered_pitch_ref_list:
 		note = music_grammar.lookUpPitchReference(p, music_xml, False, True)
-		print(note.offset)
-		print(note)
-		if len(melody_stream) > 0:
+		#print(note.offset)
+		#print(note)
+		if len(melody_stream) > 1:
 			dur_between = music21.duration.Duration(note.offset - melody_stream[-1].offset)
-			print('melody_stream[-1] is : ' + str(melody_stream[-1]))
-			print('dur_between is : ' + str(dur_between))
+			#print('melody_stream[-1] is : ' + str(melody_stream[-1]))
+			#print('dur_between is : ' + str(dur_between))
 			melody_stream[-1].duration = dur_between
 		melody_stream.insert(note.offset, note)
 	return melody_stream
@@ -223,18 +271,21 @@ def print_reductions_for_solution_xml(solution_xml, music_xml, reduction_type):
 		melody_of_depth.show()
 
 
-def print_reductions_for_parse_tree(parse_tree, music_xml):
+def print_reductions_for_parse_tree(parse_tree, music_xml, stop_labels=['S', 'N']):
 	depth = parse_tree.height()
+	music_xml.show()
+	original_parse_tree_copy = copy.deepcopy(parse_tree)
 	parse_tree_copy = copy.deepcopy(parse_tree)
-	parse_tree_copy.draw()
+	original_parse_tree_copy.draw()
 	#get_melody_from_parse_tree(parse_tree, {}, music_xml)
-	pruned_parse, removed_leaves, leaf_index, max_subtree_depth = remove_embellishment_rules_from_tree_negative_depth(parse_tree, {}, 3, 0, 0)
+	pruned_parse, removed_leaves, leaf_index, max_subtree_depth, num_removed_leaves = remove_embellishment_rules_from_tree_negative_depth(parse_tree, [], 3, 0, 0, 0, stop_labels)
 
 	while pruned_parse != parse_tree_copy:
 		print(removed_leaves)
+		pruned_melody = get_melody_from_parse_tree(original_parse_tree_copy, removed_leaves, music_xml)
 		pruned_parse.draw()
-		#get_melody_from_parse_tree(pruned_parse, removed_leaves, music_xml)
-		parse_tree_copy = copy.deepcopy(pruned_parse)
-		pruned_parse, removed_leaves, leaf_index, max_subtree_depth = remove_embellishment_rules_from_tree_negative_depth(parse_tree, removed_leaves, 3, 0, 0)
 
-#def get_melody_of_depth(head_xml, music_xml, depth = 0):
+		parse_tree_copy = copy.deepcopy(pruned_parse)
+		pruned_parse, removed_leaves, leaf_index, max_subtree_depth, num_removed_leaves = remove_embellishment_rules_from_tree_negative_depth(parse_tree, removed_leaves, 3, 0, 0, 0, stop_labels)
+
+

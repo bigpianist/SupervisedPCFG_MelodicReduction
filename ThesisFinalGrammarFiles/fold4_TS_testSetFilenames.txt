@@ -1,0 +1,58 @@
+./MusicXml/MSC-128.xml
+./MusicXml/37_Sonate fur Klavier Nr.48 C dur Op.30-1 Mov.1.xml
+./MusicXml/MSC-274.xml
+./MusicXml/MSC-280.xml
+./MusicXml/MSC-231.xml
+./MusicXml/38_Sonate fur Klavier Nr.15 C dur K.545 Mov.1.xml
+./MusicXml/59_Schwanengesang No.1 Op.72-4 D.957-4 Standchen.xml
+./MusicXml/MSC-203.xml
+./MusicXml/66_The Nutcracker Suite Op.71a No.2 March.xml
+./MusicXml/MSC-131.xml
+./MusicXml/MSC-289.xml
+./MusicXml/MSC-252.xml
+./MusicXml/41_Children's Album Op.39-18 Air de Danse napolitaine.xml
+./MusicXml/MSC-206.xml
+./MusicXml/MSC-129.xml
+./MusicXml/MSC-106.xml
+./MusicXml/74_8 Humoresky Op.101-7 B.187 Ges dur.xml
+./MusicXml/MSC-290.xml
+./MusicXml/75_Sicilienne Op.78.xml
+./MusicXml/89_12 Etudes c moll Op.10-12.xml
+./MusicXml/MSC-132.xml
+./MusicXml/MSC-207.xml
+./MusicXml/76_Salut d'amour Op.12.xml
+./MusicXml/05_Turkish March.xml
+./MusicXml/MSC-254.xml
+./MusicXml/MSC-276.xml
+./MusicXml/MSC-208.xml
+./MusicXml/42_Children's Album Op.39-9 Valse.xml
+./MusicXml/MSC-209.xml
+./MusicXml/MSC-133.xml
+./MusicXml/MSC-233.xml
+./MusicXml/MSC-268.xml
+./MusicXml/MSC-267.xml
+./MusicXml/MSC-234.xml
+./MusicXml/44_Rosamunde Prinzessin von Zypern Op.26 D797 Intermezzo No.3.xml
+./MusicXml/MSC-255.xml
+./MusicXml/MSC-239.xml
+./MusicXml/01_Waltz in E flat Grande Valse Brillante Op.18.xml
+./MusicXml/46_Dichterliebe Op.48-1 Im wunderschonen Monat.xml
+./MusicXml/77_Violinkonzert e moll Op.64 1.Satz.xml
+./MusicXml/48_Rigoletto La donna e mobile.xml
+./MusicXml/85_Tableaux d'une exposition Promenade.xml
+./MusicXml/49_The Planets Op.32 Jupiter, the Bringer of Jollity.xml
+./MusicXml/52_Fantasiestucke Op.12-7 Traumes Wirren.xml
+./MusicXml/MSC-257.xml
+./MusicXml/58_Waltzes No.6 Op.64-1 Des dur Valse du Petit Chien.xml
+./MusicXml/60_Ma Vlast Moldau.xml
+./MusicXml/MSC-258.xml
+./MusicXml/MSC-242.xml
+./MusicXml/MSC-112.xml
+./MusicXml/MSC-111.xml
+./MusicXml/86_Pomp and Circumstance Op.39 No.1.xml
+./MusicXml/MSC-109.xml
+./MusicXml/90_Impromptus D 935 Op.142-3 B dur.xml
+./MusicXml/MSC-108.xml
+./MusicXml/MSC-107.xml
+./MusicXml/MSC-102.xml
+./MusicXml/MSC-101.xml

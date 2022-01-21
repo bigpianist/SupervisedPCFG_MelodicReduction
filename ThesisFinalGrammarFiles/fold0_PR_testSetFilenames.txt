@@ -1,0 +1,19 @@
+./MusicXml/30_3 Gymnopedies No.1.xml
+./MusicXml/76_Salut d'amour Op.12.xml
+./MusicXml/70_Herz und Mund und Tat und Leben BWV147-6 Wohl mir, das ich Jesum habe.xml
+./MusicXml/16_William Tell Overture.xml
+./MusicXml/48_Rigoletto La donna e mobile.xml
+./MusicXml/78_Concerti a 4 e 5 Il cimento dell'armonia e dell'inventione Op.8 Le quattro stagioni Concerti Nr.1E dur RV.269 La Primavera.xml
+./MusicXml/61_Album fur die Jugend Op.68-10 Frohlicher Landmann.xml
+./MusicXml/81_Symphony No.9 in E minor Op.95 B.178 From the New World Mov.2 Goin' Home.xml
+./MusicXml/75_Sicilienne Op.78.xml
+./MusicXml/09_String Quartet in F major Op.3 No.5 Serenade.xml
+./MusicXml/79_Eine kleine Nachtmusik G dur K.525 1.Satz.xml
+./MusicXml/02_Moments Musicaux.xml
+./MusicXml/62_Doll's Dreaming and Awakening Op.202.xml
+./MusicXml/33_Swan Lake Op.20 No.9 Finale.xml
+./MusicXml/71_Messiah HWV.56 23.Hallelujah.xml
+./MusicXml/29_Greensleeves.xml
+./MusicXml/24_Orphee aux Enfers Overture.xml
+./MusicXml/93_Sechs Gesange Op.34-2 Auf Flugeln des Gesanges.xml
+./MusicXml/63_25 Etudes faciles et progressives, conposees et doigtees expressement pour l'etendue des petites mains Op.100-2 Arabesque.xml

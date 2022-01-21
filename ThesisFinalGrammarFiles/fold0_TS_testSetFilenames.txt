@@ -1,0 +1,58 @@
+./MusicXml/MSC-123.xml
+./MusicXml/MSC-283.xml
+./MusicXml/67_Ballade g moll Op.23.xml
+./MusicXml/MSC-191.xml
+./MusicXml/MSC-245.xml
+./MusicXml/33_Swan Lake Op.20 No.9 Finale.xml
+./MusicXml/07_Nocturne.xml
+./MusicXml/MSC-243.xml
+./MusicXml/MSC-134.xml
+./MusicXml/MSC-287.xml
+./MusicXml/MSC-121.xml
+./MusicXml/99_3 Valses No.7 Op.64-2 cis moll.xml
+./MusicXml/MSC-244.xml
+./MusicXml/MSC-281.xml
+./MusicXml/MSC-286.xml
+./MusicXml/MSC-246.xml
+./MusicXml/MSC-205.xml
+./MusicXml/78_Concerti a 4 e 5 Il cimento dell'armonia e dell'inventione Op.8 Le quattro stagioni Concerti Nr.1E dur RV.269 La Primavera.xml
+./MusicXml/MSC-120.xml
+./MusicXml/79_Eine kleine Nachtmusik G dur K.525 1.Satz.xml
+./MusicXml/MSC-271.xml
+./MusicXml/MSC-201.xml
+./MusicXml/08_Spinnerlied Op.14 No.4.xml
+./MusicXml/32_The Nutcracker Suite Op.71a No.8 Waltz of the Flowers.xml
+./MusicXml/82_An der schonen blauen Donau Op.314.xml
+./MusicXml/21_Plaisir d'Amour.xml
+./MusicXml/MSC-156.xml
+./MusicXml/15_Aida Fernando Corena.xml
+./MusicXml/MSC-139.xml
+./MusicXml/MSC-247.xml
+./MusicXml/MSC-200.xml
+./MusicXml/MSC-220.xml
+./MusicXml/MSC-204.xml
+./MusicXml/MSC-229.xml
+./MusicXml/69_Kanon und Gigue D dur for drei Violinen und Basso Continuo Kanon.xml
+./MusicXml/MSC-189.xml
+./MusicXml/50_Amazing Grace.xml
+./MusicXml/18_Thais Meditation.xml
+./MusicXml/70_Herz und Mund und Tat und Leben BWV147-6 Wohl mir, das ich Jesum habe.xml
+./MusicXml/MSC-256.xml
+./MusicXml/MSC-113.xml
+./MusicXml/MSC-135.xml
+./MusicXml/MSC-225.xml
+./MusicXml/MSC-157.xml
+./MusicXml/MSC-217.xml
+./MusicXml/MSC-263.xml
+./MusicXml/MSC-199.xml
+./MusicXml/MSC-299.xml
+./MusicXml/MSC-181.xml
+./MusicXml/MSC-277.xml
+./MusicXml/MSC-210.xml
+./MusicXml/MSC-122.xml
+./MusicXml/MSC-174.xml
+./MusicXml/14_Menuett No.2 in G maj.xml
+./MusicXml/MSC-145.xml
+./MusicXml/84_Toccata und Fuge d moll BWV565.xml
+./MusicXml/MSC-169.xml
+./MusicXml/MSC-282.xml

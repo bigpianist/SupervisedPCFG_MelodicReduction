@@ -1,0 +1,19 @@
+./MusicXml/92_Franzosische Suiten Nr.5 G dur BWV 816 Gavotte.xml
+./MusicXml/98_Sonate fur Klavier Nr.8 c moll Pathetique Op.13 2.Satz.xml
+./MusicXml/99_3 Valses No.7 Op.64-2 cis moll.xml
+./MusicXml/22_Ellens Gesang III Op.52-6 D.839.xml
+./MusicXml/60_Ma Vlast Moldau.xml
+./MusicXml/41_Children's Album Op.39-18 Air de Danse napolitaine.xml
+./MusicXml/49_The Planets Op.32 Jupiter, the Bringer of Jollity.xml
+./MusicXml/45_Gianni Schicchi O mio babbino caro.xml
+./MusicXml/42_Children's Album Op.39-9 Valse.xml
+./MusicXml/13_Traumerei.xml
+./MusicXml/40_Alpengluhen Op.193.xml
+./MusicXml/37_Sonate fur Klavier Nr.48 C dur Op.30-1 Mov.1.xml
+./MusicXml/28_Le carnaval des animaux Le Cygne.xml
+./MusicXml/26_Overture No.3 BWV.1068 Air on a G string.xml
+./MusicXml/25_L'arlesienne Suite No.2 Farandole.xml
+./MusicXml/23_Die Meistersinger von Nurnberg Prelude.xml
+./MusicXml/15_Aida Fernando Corena.xml
+./MusicXml/14_Menuett No.2 in G maj.xml
+./MusicXml/10_Wiegenlied.xml

@@ -1,5 +1,8 @@
 import re
 from nltk.tree import ParentedTree
+import copy
+import score_from_tree
+import music_grammar
 
 def getAllPitchReferencesAsList(solutionXml):
 	root = solutionXml.getroot()
@@ -238,9 +241,9 @@ def compareTreesBottomUp(tree1, tree2):
 	tree2LeafPositions = tree2.treepositions('leaves')
 	bestPath, matrix = alignLeaves(tree1Leaves, tree2Leaves)
 
-	print("tree1Leaves" + str(tree1Leaves))
-	print("tree2Leaves" + str(tree2Leaves))
-	print("bestpath" + str(bestPath))
+	#print("tree1Leaves" + str(tree1Leaves))
+	#print("tree2Leaves" + str(tree2Leaves))
+	#print("bestpath" + str(bestPath))
 	tree2LeafIndex = 0
 	difference = 5#len(tree1.leaves()) - len(tree2.leaves())
 	#sometimes there are extra leaves in the solution tree
@@ -269,5 +272,82 @@ def compareTrees(tree1, tree2):
 	numCorrect, numCorrectNonN = compareNodes(tree1, copyTree, numCorrect, numCorrectNonN)
 	return numCorrect, numCorrectNonN
 
+def compareTwoNoteSetsForReductions(originalNotes, parsedNotes, solutionNotes):
+	music_grammar.fixMelodyStreamDurations(parsedNotes)
+	numSpuriousReductions = 0
+	numAccurateReductions = 0
+	#originalNotes.show()
+	#solutionNotes.show()
+	#parsedNotes.show()
+	#the reducedNotePairsSolution are all the notes that were reduced out for the current solution
+	solutionReducedNotePairs = []
+	solutionPitchesAndOnsets = [[note.offset, note.ps] for note in solutionNotes.flat.notes]
+	for note in originalNotes.flat.notes:
+		curPair = [note.offset, note.ps]
+		if curPair not in solutionPitchesAndOnsets:
+			solutionReducedNotePairs.append(curPair)
 
+	parseReducedNotePairs = []
+	parsePitchesAndOnsets = [[note.offset, note.ps] for note in parsedNotes.flat.notes]
+	parsePitchesOnsetsAndDurations = [[note.offset, note.ps, note.duration.quarterLength] for note in parsedNotes.flat.notes]
+	for note in originalNotes.flat.notes:
+		curPair = [note.offset, note.ps]
+		if curPair not in parsePitchesAndOnsets:
+			parseReducedNotePairs.append(curPair)
+
+	for tuple in parseReducedNotePairs:
+		if tuple in solutionReducedNotePairs:
+			numAccurateReductions += 1
+		else:
+			numSpuriousReductions += 1
+	numMissedReductions = len(solutionReducedNotePairs) - numAccurateReductions
+	return [numAccurateReductions, numSpuriousReductions, numMissedReductions]
+
+
+
+
+def compareTreesByReductions(parseTree, musicXml, solutionXml, reductionType, stopLabels=['S', 'N']):
+	reductionsByDepth = {}
+	depth = parseTree.height()
+	#musicXml.show()
+	originalParseTreeCopy = copy.deepcopy(parseTree)
+	parseTreeCopy = copy.deepcopy(parseTree)
+	#originalParseTreeCopy.draw()
+	#get_melody_from_parseTree(parseTree, {}, musicXml)
+	numComparisons = 0
+	prunedParse, removedLeaves, leaf_index, max_subtree_depth, num_removed_leaves = score_from_tree.remove_embellishment_rules_from_tree_negative_depth(parseTree, [], 3, 0, 0, 0, stopLabels)
+
+	solutionDepth = score_from_tree.get_total_depth_of_tree(solutionXml, 0, reductionType)
+	pitchRefs = score_from_tree.gather_note_refs_of_depth(solutionXml, [], reductionType, solutionDepth, 0)
+	pitchRefs.sort(key=music_grammar.pitchRefToNum)
+	originalNotes = score_from_tree.pitch_refs_to_notes(pitchRefs, musicXml)
+	compareNow = False
+	while prunedParse != parseTreeCopy:
+		print(removedLeaves)
+		prunedMelody = score_from_tree.get_melody_from_parse_tree(originalParseTreeCopy, removedLeaves, musicXml)
+		#prunedParse.draw()
+
+		pitchRefs = score_from_tree.gather_note_refs_of_depth(solutionXml, [], reductionType, solutionDepth - 1, 0)
+		pitchRefs.sort(key=music_grammar.pitchRefToNum)
+		melodyOfDepth = score_from_tree.pitch_refs_to_notes(pitchRefs, musicXml)
+		#melody_of_depth.show()
+		while len(melodyOfDepth) >= len(prunedMelody):
+			print('solution length: ' + str(len(melodyOfDepth)))
+			print('parse mel length: ' + str(len(prunedMelody)))
+			solutionDepth = solutionDepth - 1
+			pitchRefs = score_from_tree.gather_note_refs_of_depth(solutionXml, [], reductionType, solutionDepth - 1, 0)
+			pitchRefs.sort(key=music_grammar.pitchRefToNum)
+			melodyOfDepth = score_from_tree.pitch_refs_to_notes(pitchRefs, musicXml)
+			compareNow = True
+		print('solution length after: ' + str(len(melodyOfDepth)))
+		print('parse mel length after: ' + str(len(prunedMelody)))
+		#melodyOfDepth.show()
+		if compareNow:
+			reductionsNumbers = compareTwoNoteSetsForReductions(musicXml, prunedMelody, melodyOfDepth)
+			reductionsByDepth[numComparisons] = reductionsNumbers
+			compareNow = False
+			numComparisons += 1
+		parseTreeCopy = copy.deepcopy(prunedParse)
+		prunedParse, removedLeaves, leaf_index, max_subtree_depth, num_removed_leaves = score_from_tree.remove_embellishment_rules_from_tree_negative_depth(parseTree, removedLeaves, 3, 0, 0, 0, stopLabels)
+	return reductionsByDepth
 

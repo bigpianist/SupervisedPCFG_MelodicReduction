@@ -1,0 +1,58 @@
+./MusicXml/MSC-226.xml
+./MusicXml/MSC-137.xml
+./MusicXml/MSC-272.xml
+./MusicXml/MSC-159.xml
+./MusicXml/MSC-285.xml
+./MusicXml/MSC-176.xml
+./MusicXml/06_Blumenlied Op.39.xml
+./MusicXml/MSC-215.xml
+./MusicXml/MSC-163.xml
+./MusicXml/11_Solvejgs Lied.xml
+./MusicXml/MSC-197.xml
+./MusicXml/72_Preludes 1 La fille aux cheveux de lin.xml
+./MusicXml/30_3 Gymnopedies No.1.xml
+./MusicXml/MSC-172.xml
+./MusicXml/MSC-241.xml
+./MusicXml/MSC-182.xml
+./MusicXml/MSC-183.xml
+./MusicXml/MSC-146.xml
+./MusicXml/MSC-253.xml
+./MusicXml/12_Anitras Dans.xml
+./MusicXml/31_Sinfonie Nr.9 d moll Op.125 4.Satz An die Freude.xml
+./MusicXml/13_Traumerei.xml
+./MusicXml/MSC-192.xml
+./MusicXml/MSC-130.xml
+./MusicXml/MSC-235.xml
+./MusicXml/MSC-154.xml
+./MusicXml/MSC-165.xml
+./MusicXml/91_Rondo D dur K.485.xml
+./MusicXml/MSC-188.xml
+./MusicXml/95_12 Variationen uber ein franzosisches Lied 'Ah,vous dirai-je, maman' C dur K.265 K6.300e.xml
+./MusicXml/MSC-164.xml
+./MusicXml/MSC-193.xml
+./MusicXml/MSC-141.xml
+./MusicXml/MSC-155.xml
+./MusicXml/MSC-198.xml
+./MusicXml/55_Farewell To The Piano WoO.62.xml
+./MusicXml/17_Carmen.xml
+./MusicXml/MSC-296.xml
+./MusicXml/68_12 Etudes E dur Op.10-3.xml
+./MusicXml/MSC-161.xml
+./MusicXml/MSC-260.xml
+./MusicXml/MSC-115.xml
+./MusicXml/MSC-142.xml
+./MusicXml/MSC-126.xml
+./MusicXml/MSC-170.xml
+./MusicXml/96_Lieder ohne Worte Heft 5 Op.62-6 Fruhlingslied.xml
+./MusicXml/MSC-224.xml
+./MusicXml/51_Fantasiestucke Op.12-2 Aufschwung.xml
+./MusicXml/57_Waves of the Danube.xml
+./MusicXml/MSC-166.xml
+./MusicXml/MSC-173.xml
+./MusicXml/MSC-116.xml
+./MusicXml/MSC-227.xml
+./MusicXml/87_Impromptu cis moll Op.66.xml
+./MusicXml/40_Alpengluhen Op.193.xml
+./MusicXml/MSC-177.xml
+./MusicXml/MSC-114.xml
+./MusicXml/MSC-294.xml

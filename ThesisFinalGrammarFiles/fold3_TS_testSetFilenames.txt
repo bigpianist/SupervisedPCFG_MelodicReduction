@@ -1,0 +1,58 @@
+./MusicXml/MSC-232.xml
+./MusicXml/MSC-143.xml
+./MusicXml/MSC-117.xml
+./MusicXml/62_Doll's Dreaming and Awakening Op.202.xml
+./MusicXml/20_La Traviata Brindisi.xml
+./MusicXml/MSC-275.xml
+./MusicXml/98_Sonate fur Klavier Nr.8 c moll Pathetique Op.13 2.Satz.xml
+./MusicXml/MSC-167.xml
+./MusicXml/94_Csikos Post.xml
+./MusicXml/MSC-148.xml
+./MusicXml/MSC-179.xml
+./MusicXml/43_Les Contes d'Hoffmann Barcarolle.xml
+./MusicXml/MSC-180.xml
+./MusicXml/73_Pavane pour une infante defunte.xml
+./MusicXml/MSC-218.xml
+./MusicXml/MSC-153.xml
+./MusicXml/MSC-269.xml
+./MusicXml/MSC-149.xml
+./MusicXml/MSC-240.xml
+./MusicXml/MSC-184.xml
+./MusicXml/MSC-216.xml
+./MusicXml/MSC-150.xml
+./MusicXml/MSC-219.xml
+./MusicXml/MSC-293.xml
+./MusicXml/MSC-213.xml
+./MusicXml/25_L'arlesienne Suite No.2 Farandole.xml
+./MusicXml/MSC-223.xml
+./MusicXml/83_Radetzky-Marsch Op.228.xml
+./MusicXml/MSC-104.xml
+./MusicXml/03_Bagatelle 'Fur Elise' WoO.59.xml
+./MusicXml/MSC-248.xml
+./MusicXml/MSC-265.xml
+./MusicXml/MSC-228.xml
+./MusicXml/MSC-292.xml
+./MusicXml/MSC-118.xml
+./MusicXml/26_Overture No.3 BWV.1068 Air on a G string.xml
+./MusicXml/MSC-237.xml
+./MusicXml/MSC-273.xml
+./MusicXml/MSC-168.xml
+./MusicXml/MSC-284.xml
+./MusicXml/MSC-185.xml
+./MusicXml/MSC-119.xml
+./MusicXml/36_Estudiantina Op.191.xml
+./MusicXml/MSC-187.xml
+./MusicXml/63_25 Etudes faciles et progressives, conposees et doigtees expressement pour l'etendue des petites mains Op.100-2 Arabesque.xml
+./MusicXml/MSC-127.xml
+./MusicXml/27_Peer Gynt Suite No.1 Op.46 Morgenstemning.xml
+./MusicXml/28_Le carnaval des animaux Le Cygne.xml
+./MusicXml/MSC-266.xml
+./MusicXml/MSC-105.xml
+./MusicXml/MSC-230.xml
+./MusicXml/29_Greensleeves.xml
+./MusicXml/09_String Quartet in F major Op.3 No.5 Serenade.xml
+./MusicXml/MSC-251.xml
+./MusicXml/65_25 Etudes faciles et progressives, conposees et doigtees expressement pour l'etendue des petites mains Op.100-20 Tarentelle.xml
+./MusicXml/88_Scherzo b moll Op.31.xml
+./MusicXml/MSC-261.xml
+./MusicXml/MSC-190.xml
